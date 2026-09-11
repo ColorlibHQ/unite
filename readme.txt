@@ -2,7 +2,7 @@
 Contributors: silkalns
 Theme URI: http://colorlib.com/wp/unite/
 Version: 2.0.8
-Tested up to: WP 5.3
+Tested up to: 7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -71,6 +71,18 @@ Theme documentation is available on http://colorlib.com/wp/support/unite
  https://www.pexels.com/photo/landscape-nature-night-relaxation-36478/; Image used in screenshot.png
 
 == Changelog ==
+
+= 2.1.0 =
+Security and maintenance release.
+
+* Security: the Customizer's colour sanitiser returned its input unchanged when validation failed, so arbitrary text could be stored through a colour setting and was then printed into the inline <style> block on every page. Invalid values are rejected, and every colour is re-validated as it is printed
+* Security: the custom CSS option was run through html_entity_decode(), which turned an escaped "</style><script>" back into live markup. It is stripped of tags instead
+* Security: the social widget never overrode update(), so its title was stored exactly as submitted and echoed unescaped. Both widgets now sanitise on save and escape on output
+* The theme was running Bootstrap 4.0.0 JavaScript against Bootstrap 3.3.4 CSS and Bootstrap 3 markup, a mismatch introduced in 2.0.9. Both are now stock 3.4.1, which is also the release that fixed CVE-2019-8331. A third copy of the library, enqueued by nothing, and an unminified source that was 4.0.0-beta.2 are gone
+* Removed 81 lines of unreachable code: get_unite_theme_options() was defined twice, and PHP only ever ran the first
+* Replaced Font Awesome 4.2.0 with Font Awesome 7.3.1, subsetted to the glyphs the theme renders and shipped as woff2 only
+* Dropped Internet Explorer support: html5shiv, Respond.js and the X-UA-Compatible meta tag
+* The screenshot is 1200x900 at 284 KB rather than 880x660 at 624 KB
 
 ####2.0.8 - 14.01.2020 ####
 * Update screenshot

@@ -897,7 +897,7 @@ msgstr "M&eacute;ta"
 
 #~ msgid "Upgrade your version of WordPress for full media support."
 #~ msgstr ""
-#~ "Mettez &agrave; jour votre version de Wordpress pour un support complet."
+#~ "Mettez &agrave; jour votre version de WordPress pour un support complet."
 
 #~ msgid "View File"
 #~ msgstr "Voir le fichier"
