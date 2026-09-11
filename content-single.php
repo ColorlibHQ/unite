@@ -41,7 +41,7 @@
 			if ( ! unite_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = '<i class="fa fa-folder-open-o"></i> %2$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
+					$meta_text = '<i class="fa-regular fa-folder-open"></i> %2$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
 				} else {
 					$meta_text = '<i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
 				}
@@ -49,9 +49,9 @@
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = '<i class="fa fa-folder-open-o"></i> %1$s <i class="fa fa-tags"></i> %2$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
+					$meta_text = '<i class="fa-regular fa-folder-open"></i> %1$s <i class="fa fa-tags"></i> %2$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
 				} else {
-					$meta_text = '<i class="fa fa-folder-open-o"></i> %1$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
+					$meta_text = '<i class="fa-regular fa-folder-open"></i> %1$s. <i class="fa fa-link"></i> <a href="%3$s" rel="bookmark">'.esc_html__('permalink','unite').'</a>.';
 				}
 
 			} // end check for categories on this blog
@@ -64,7 +64,7 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'unite' ), '<i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'unite' ), '<i class="fa-regular fa-pen-to-square"></i><span class="edit-link">', '</span>' ); ?>
 		<hr class="section-divider">
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

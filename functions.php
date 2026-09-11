@@ -156,7 +156,24 @@ function unite_scripts() {
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), '3.4.1' );
 
-	wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
+	$fa_uri = get_template_directory_uri() . '/inc/css/fontawesome/';
+	/*
+	 * Font Awesome 7, self-hosted, woff2 only and with no v4 or v5 shim: the
+	 * theme's own markup uses native Font Awesome 7 names. The bundled build is
+	 * subsetted to the glyphs this theme renders, a few kilobytes rather than a
+	 * few hundred. A site that uses Font Awesome classes in its own content -- a
+	 * widget, a page builder, a child theme -- can load the complete set:
+	 *
+	 *     add_filter( 'unite_full_fontawesome', '__return_true' );
+	 */
+	if ( apply_filters( 'unite_full_fontawesome', false ) ) {
+		wp_enqueue_style( 'unite-icons', $fa_uri . 'fontawesome.min.css', array(), '7.3.1' );
+		wp_enqueue_style( 'unite-icons-solid', $fa_uri . 'solid.min.css', array( 'unite-icons' ), '7.3.1' );
+		wp_enqueue_style( 'unite-icons-regular', $fa_uri . 'regular.min.css', array( 'unite-icons' ), '7.3.1' );
+		wp_enqueue_style( 'unite-icons-brands', $fa_uri . 'brands.min.css', array( 'unite-icons' ), '7.3.1' );
+	} else {
+		wp_enqueue_style( 'unite-icons', $fa_uri . 'subset/fontawesome-subset.min.css', array(), '7.3.1' );
+	}
 
 	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
 
