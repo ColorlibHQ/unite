@@ -73,15 +73,19 @@ function unite_save_custom_meta($post_id)
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return;
     
-    if ('page' == $_POST['post_type']) {
+    $post_type = isset( $_POST['post_type'] ) ? sanitize_key( wp_unslash( $_POST['post_type'] ) ) : '';
+
+    if ( 'page' === $post_type ) {
         if (!current_user_can('edit_page', $post_id))
             return $post_id;
     } elseif (!current_user_can('edit_post', $post_id)) {
         return $post_id;
     }
 
-    if ( $_POST['site_layout'] ) {
-        $layout = isset( $site_layout[ $_POST['site_layout'] ] ) ? $_POST['site_layout'] : 'side-pull-left';
+    $submitted = isset( $_POST['site_layout'] ) ? sanitize_key( wp_unslash( $_POST['site_layout'] ) ) : '';
+
+    if ( $submitted ) {
+        $layout = isset( $site_layout[ $submitted ] ) ? $submitted : 'side-pull-left';
         update_post_meta( $post_id, 'site_layout', $layout );
     } else{
         delete_post_meta( $post_id, 'site_layout' );
