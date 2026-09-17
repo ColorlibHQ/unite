@@ -1,7 +1,7 @@
 == Unite ==
 Contributors: silkalns
 Theme URI: http://colorlib.com/wp/unite/
-Version: 2.1.1
+Version: 2.1.2
 Tested up to: 7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -71,6 +71,9 @@ Theme documentation is available on http://colorlib.com/wp/support/unite
  https://www.pexels.com/photo/landscape-nature-night-relaxation-36478/; Image used in screenshot.png
 
 == Changelog ==
+
+= 2.1.2 =
+* Fixed the heart on the section divider and the comment icon in the tabbed widget drawing as empty boxes. Both still named the Font Awesome 4 family, which the theme stopped shipping in 2.1.0
 
 = 2.1.1 =
 * The bundled Font Awesome subset was missing the rules that bind an icon class to a font face. Icons written as `fa-regular` lost `--fa-style: 400` and drew the solid variant instead of the outline, and `.fa-brands` would have fallen back to a face with no brand glyphs in it at all
