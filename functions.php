@@ -249,3 +249,16 @@ function unite_get_option( $name, $default = false ) {
   return $default;
 }
 endif;
+
+/**
+ * Editor and markup support this theme predates.
+ */
+if ( ! function_exists( 'unite_modern_supports' ) ) {
+	function unite_modern_supports() {
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-styles' );
+	}
+	add_action( 'after_setup_theme', 'unite_modern_supports', 20 );
+}
