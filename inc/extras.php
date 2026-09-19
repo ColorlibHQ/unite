@@ -65,7 +65,7 @@ add_filter( 'the_content_more_link', 'unite_remove_more_link_scroll' );
  * Change default "Read More" button when using the_excerpt
  */
 function unite_excerpt_more( $more ) {
-  return ' <a class="more-link" href="'. esc_url(get_permalink( get_the_ID() )) . '">' . esc_html__( 'Continue reading', 'unite' ) . ' <i class="fa fa-chevron-right"></i></a>';
+  return ' <a class="more-link" href="'. esc_url(get_permalink( get_the_ID() )) . '">' . esc_html__( 'Continue reading', 'unite' ) . ' <i class="fa-solid fa-chevron-right"></i></a>';
 }
 add_filter( 'excerpt_more', 'unite_excerpt_more' );
 
@@ -434,7 +434,7 @@ function unite_woocommerce_menucart($menu, $args) {
         $menu_item = '</ul><ul class="nav navbar-nav navbar-right"><li><a class="woomenucart-menu-item" href="'. $cart_url .'" title="'. $viewing_cart .'">';
       }
 
-      $menu_item .= '<i class="fa fa-shopping-cart"></i> ';
+      $menu_item .= '<i class="fa-solid fa-shopping-cart"></i> ';
 
       $menu_item .= $cart_contents.' - '. $cart_total;
       $menu_item .= '</a></li></ul>';

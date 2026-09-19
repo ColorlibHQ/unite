@@ -24,11 +24,11 @@ function unite_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"> <?php next_posts_link( __( '<i class="fa fa-chevron-left"></i> Older posts', 'unite' ) ); ?></div>
+			<div class="nav-previous"> <?php next_posts_link( __( '<i class="fa-solid fa-chevron-left"></i> Older posts', 'unite' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-chevron-right"></i>', 'unite' ) ); ?> </div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa-solid fa-chevron-right"></i>', 'unite' ) ); ?> </div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -56,8 +56,8 @@ function unite_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'unite' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left"></i> %title', 'Previous post link', 'unite' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa fa-chevron-right"></i>', 'Next post link',     'unite' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa-solid fa-chevron-left"></i> %title', 'Previous post link', 'unite' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa-solid fa-chevron-right"></i>', 'Next post link',     'unite' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -142,7 +142,7 @@ function unite_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( '<span class="posted-on"><i class="fa fa-calendar"></i> %1$s</span><span class="byline"> <i class="fa fa-user"></i> %2$s</span>',
+	printf( '<span class="posted-on"><i class="fa-solid fa-calendar"></i> %1$s</span><span class="byline"> <i class="fa-solid fa-user"></i> %2$s</span>',
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string

@@ -21,13 +21,13 @@
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<p><a class="btn btn-primary read-more" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'unite' ); ?> <i class="fa fa-chevron-right"></i></a></p>
+		<p><a class="btn btn-primary read-more" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'unite' ); ?> <i class="fa-solid fa-chevron-right"></i></a></p>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
 
 		<?php if(unite_get_option('blog_settings') == 1 || !unite_get_option('blog_settings')) : ?>
-			<?php the_content( __( 'Continue reading <i class="fa fa-chevron-right"></i>', 'unite' ) ); ?>
+			<?php the_content( __( 'Continue reading <i class="fa-solid fa-chevron-right"></i>', 'unite' ) ); ?>
 		<?php elseif (unite_get_option('blog_settings') == 2) :?>
 			<?php the_excerpt(); ?>
 		<?php endif; ?>
@@ -58,7 +58,7 @@
 				$tags_list = get_the_tag_list( '', __( ', ', 'unite' ) );
 				if ( $tags_list ) :
 			?>
-			<span class="tags-links"><i class="fa fa-tags"></i>
+			<span class="tags-links"><i class="fa-solid fa-tags"></i>
 				<?php printf( __( ' %1$s', 'unite' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>

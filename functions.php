@@ -154,7 +154,7 @@ if ( ! function_exists( 'unite_scripts' ) ) :
  */
 function unite_scripts() {
 
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), '3.4.1' );
+	wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), '5.3.8-4' );
 
 	$fa_uri = get_template_directory_uri() . '/inc/css/fontawesome/';
 	/*
@@ -167,17 +167,17 @@ function unite_scripts() {
 	 *     add_filter( 'unite_full_fontawesome', '__return_true' );
 	 */
 	if ( apply_filters( 'unite_full_fontawesome', false ) ) {
-		wp_enqueue_style( 'unite-icons', $fa_uri . 'fontawesome.min.css', array(), '7.3.1' );
+		wp_enqueue_style( 'unite-icons', $fa_uri . 'fontawesome.min.css', array(), '7.3.1-1' );
 		wp_enqueue_style( 'unite-icons-solid', $fa_uri . 'solid.min.css', array( 'unite-icons' ), '7.3.1' );
 		wp_enqueue_style( 'unite-icons-regular', $fa_uri . 'regular.min.css', array( 'unite-icons' ), '7.3.1' );
 		wp_enqueue_style( 'unite-icons-brands', $fa_uri . 'brands.min.css', array( 'unite-icons' ), '7.3.1' );
 	} else {
-		wp_enqueue_style( 'unite-icons', $fa_uri . 'subset/fontawesome-subset.min.css', array(), '7.3.1' );
+		wp_enqueue_style( 'unite-icons', $fa_uri . 'subset/fontawesome-subset.min.css', array(), '7.3.1-1' );
 	}
 
 	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array( 'jquery' ), '3.4.1', true );
+	wp_enqueue_script( 'unite-bootstrap', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array( 'jquery' ), '5.3.8-4', true );
 
 	wp_enqueue_script( 'unite-functions', get_template_directory_uri() . '/inc/js/main.min.js', array('jquery') );
 

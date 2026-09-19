@@ -34,9 +34,9 @@ class unite_popular_posts_widget extends WP_Widget {
         <div class="widget tabbed">
             <div class="tabs-wrapper">
                 <ul class="nav nav-tabs">
-                      <li class="active"><a href="#popular-posts" data-toggle="tab"><?php _e('Popular', 'unite') ?></a></li>
-                      <li><a href="#recent" data-toggle="tab"><?php _e('Recent', 'unite') ?></a></li>
-                      <li><a href="#messages" data-toggle="tab"><i class="fa fa-comments tab-comment"></i></a></li>
+                      <li class="active"><a href="#popular-posts" data-bs-toggle="tab"><?php _e('Popular', 'unite') ?></a></li>
+                      <li><a href="#recent" data-bs-toggle="tab"><?php _e('Recent', 'unite') ?></a></li>
+                      <li><a href="#messages" data-bs-toggle="tab"><i class="fa-solid fa-comments tab-comment"></i></a></li>
                 </ul>
 
             <div class="tab-content">
